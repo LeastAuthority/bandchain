@@ -15,6 +15,7 @@ from .db import (
     raw_reports,
     validators,
     delegations,
+    account_transcations,
 )
 
 
@@ -26,7 +27,18 @@ class Handler(object):
         self.conn.execute(blocks.insert(), msg)
 
     def handle_new_transaction(self, msg):
-        self.conn.execute(transactions.insert(), msg)
+        print(msg)
+        related_tx_accounts = msg["account_transcations"]
+        del msg["account_transcations"]
+        res = self.conn.execute(transactions.insert(), msg)
+        tx_id = res.inserted_primary_key[0]
+        print(related_tx_accounts)
+        print(tx_id)
+        for account in related_tx_accounts:
+            print({"id": tx_id, "address": account})
+            if account != "":
+                self.conn.execute(account_transcations.insert(), {
+                                  "id": tx_id, "address": account})
 
     def handle_set_account(self, msg):
         self.conn.execute(
