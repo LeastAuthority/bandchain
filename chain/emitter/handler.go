@@ -55,7 +55,7 @@ func (app *App) handleMsg(txHash []byte, msg sdk.Msg, log sdk.ABCIMessageLog, ex
 	case dist.MsgWithdrawDelegatorReward:
 		app.handleMsgWithdrawDelegatorReward(txHash, msg, evMap, extra)
 	case dist.MsgSetWithdrawAddress:
-		break
+		app.handleMsgSetWithdrawAddress(txHash, msg, evMap, extra)
 	}
 }
 
