@@ -34,7 +34,7 @@ let create = (ledgerApp, accountIndex) => {
   let prefix = "band";
 
   let%Promise transport =
-    Os.isWindow()
+    Os.isWindows()
       ? LedgerJS.createTransportWebHID(timeout) : LedgerJS.createTransportWebUSB(timeout);
 
   let app = LedgerJS.createApp(transport);

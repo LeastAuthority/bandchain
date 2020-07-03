@@ -219,7 +219,7 @@ let make = (~chainID, ~ledgerApp) => {
        : <div
            className={Styles.connectBtn(~isLoading=false, ())}
            onClick={_ => {
-             switch (Os.isWindow(), Os.checkHID()) {
+             switch (Os.isWindows(), Os.checkHID()) {
              | (true, false) =>
                let isConfirm =
                  Window.confirm(

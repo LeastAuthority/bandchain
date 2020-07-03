@@ -4,7 +4,7 @@ function() {
 }
 |}];
 
-let isWindow: unit => bool = [%bs.raw
+let isWindows: unit => bool = [%bs.raw
   {|
 function() {
   let x = navigator.userAgent;
