@@ -10,6 +10,7 @@
 
 ### Chain
 
+- (impv) [\#2160](https://github.com/bandprotocol/bandchain/pull/2160) Add missing field in raw reports and reports table
 - (impv) [\#2151](https://github.com/bandprotocol/bandchain/pull/2151) Fix `exec_env` code more consistent.
 - (impv) [\#2144](https://github.com/bandprotocol/bandchain/pull/2144) Add validator votes table.
 - (impv) [\#2148](https://github.com/bandprotocol/bandchain/pull/2148) Add more unit tests and fix nil retdata and nil calldata.
